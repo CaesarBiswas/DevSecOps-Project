@@ -21,7 +21,7 @@ spec:
   selector:
     app: node-exporter
   ports:
-    - name: node-exporter
+    - name: metrics
       protocol: TCP
       port: 9100
       targetPort: 9100
