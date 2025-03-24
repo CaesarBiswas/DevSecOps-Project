@@ -12,6 +12,20 @@
 #     port: 9100
 #     targetPort: 9100
 #   type: NodePort
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: node-exporter
+#   namespace: prometheus-node-exporter
+# spec:
+#   selector:
+#     app: node-exporter
+#   ports:
+#     - name: metrics
+#       protocol: TCP
+#       port: 443
+#       targetPort: 9100
+#   type: LoadBalancer
 apiVersion: v1
 kind: Service
 metadata:
@@ -23,6 +37,6 @@ spec:
   ports:
     - name: metrics
       protocol: TCP
-      port: 443
+      port: 9100  # ✅ Change this from 443 to 9100
       targetPort: 9100
   type: LoadBalancer
