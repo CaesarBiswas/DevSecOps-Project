@@ -12,6 +12,23 @@
 #     nodePort: 30007
 #   selector:
 #     app: netflix-app
+.............
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: netflix-app
+#   labels:
+#     app: netflix-app
+# spec:
+#   type: LoadBalancer
+#   ports:
+#     - port: 80
+#       targetPort: 80
+#   selector:
+#     app: netflix-app
+.................
+
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -19,7 +36,7 @@ metadata:
   labels:
     app: netflix-app
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - port: 80
       targetPort: 80
